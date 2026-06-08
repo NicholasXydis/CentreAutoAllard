@@ -47,4 +47,4 @@ jobs:
         run: npm audit --audit-level=moderate
 
       - name: Secret scan
-        uses: gitleaks/gitleaks-action@v2
+        uses: gitleaks/gitleaks-action@v3
