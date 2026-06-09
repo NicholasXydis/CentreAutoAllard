@@ -10,7 +10,7 @@ ENV NODE_ENV=production
 COPY . .
 RUN npm run build
 
-FROM nginx@sha256:8b1e78743a03dbb2c95171cc58639fef29abc8816598e27fb910ed2e621e589a AS runner
+FROM nginx@sha256:5aca99593157f4ae539a5dec1092a0ad8762f8e2eb1789085a13a0f5622369f6 AS runner
 
 RUN apk upgrade --no-cache \
     && rm /etc/nginx/conf.d/default.conf
