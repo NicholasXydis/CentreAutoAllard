@@ -5,8 +5,29 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    groups:
+      npm-safe-updates:
+        update-types:
+          - patch
+          - minor
+    ignore:
+      - dependency-name: '*'
+        update-types:
+          - version-update:semver-major
+      - dependency-name: tailwindcss
+        versions:
+          - '>=4'
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    groups:
+      actions-safe-updates:
+        update-types:
+          - patch
+          - minor
+    ignore:
+      - dependency-name: '*'
+        update-types:
+          - version-update:semver-major
