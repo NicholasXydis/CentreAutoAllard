@@ -1,6 +1,5 @@
-import {redirect} from 'next/navigation';
-import {defaultLocale} from '@/i18n/routing';
+export const dynamic = 'force-static';
 
 export default function RootPage() {
-  redirect(`/${defaultLocale}`);
+  return null;
 }

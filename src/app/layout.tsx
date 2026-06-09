@@ -1,6 +1,5 @@
-import type {Metadata} from 'next';
-import {Inter} from 'next/font/google';
 import './globals.css';
+import {Inter} from 'next/font/google';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -8,14 +7,9 @@ const inter = Inter({
   display: 'swap'
 });
 
-export const metadata: Metadata = {
-  title: "Centre D'Auto Allard",
-  description: 'Garage familial a Montreal pour mecanique automobile et lave-auto.'
-};
-
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
   return (
-    <html lang="fr" className={inter.variable}>
+    <html suppressHydrationWarning className={inter.variable}>
       <body>{children}</body>
     </html>
   );

@@ -8,6 +8,7 @@ export const site = {
   postalCode: 'H4E 2K9',
   addressFull: '2350 Rue Allard, Montreal, QC H4E 2K9',
   googleMapsUrl: 'https://maps.google.com/?q=2350+Rue+Allard+Montreal+QC',
-  bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL ?? 'https://squareup.com/appointments/book/REPLACE_ME',
+  bookingUrl:
+    process.env.NEXT_PUBLIC_BOOKING_URL ?? 'https://squareup.com/appointments/book/REPLACE_ME',
   since: 1968
 } as const;
