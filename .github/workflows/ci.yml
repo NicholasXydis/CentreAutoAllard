@@ -45,3 +45,14 @@ jobs:
 
       - name: Build
         run: npm run build
+
+  compose-validation:
+    name: Compose Validation
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Validate Compose
+        run: docker compose --env-file .env.example config --quiet
