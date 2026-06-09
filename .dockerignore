@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+.git/
+.github/
+.next/
+.idea/
+.vs/
+.vscode/
+node_modules/
+out/
+coverage/
+tsconfig.tsbuildinfo
+playwright-report/
+test-results/
