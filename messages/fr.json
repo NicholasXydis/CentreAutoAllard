@@ -7,62 +7,26 @@
     "home": "Accueil",
     "services": "Services",
     "contact": "Nous joindre",
-    "call": "(514) 768-4455",
-    "back": "Retour"
+    "back": "Retour",
+    "label": "Navigation principale"
   },
   "hero": {
     "eyebrow": "Un service familial de confiance depuis 1968",
     "title": "Centre D'Auto Allard",
     "subtitle": "Fièrement au service de Ville-Émard avec un service honnête, des mécaniciens experts et des soins automobiles de qualité.",
-    "cta": "Nous appeler",
     "explore": "Nos services"
   },
-  "stats": {
-    "since": "1968",
-    "sinceLabel": "Au service depuis 1968",
-    "rating": "4.3",
-    "ratingLabel": "Évalué par nos clients",
-    "metro": "Accès\nMétro",
-    "metroLabel": "À 7 min du métro Monk",
-    "family": "Garage\nFamilial",
-    "familyLabel": "Trois générations de service"
+  "language": {
+    "en": "Passer à l'anglais",
+    "fr": "Passer au français"
   },
-  "services": {
-    "eyebrow": "NOS SERVICES",
-    "title": "Tout ce dont votre voiture a besoin",
-    "learnMore": "En savoir plus",
-    "mechanics": {
-      "title": "Mécanique",
-      "description": "Diagnostic et réparations expertes pour toutes marques et modèles."
-    },
-    "carwash": {
-      "title": "Lave-Auto",
-      "description": "Lavage professionnel pour garder votre véhicule impeccable."
-    },
-    "tires": {
-      "title": "Pneus",
-      "description": "Large sélection de pneus et installation experte."
-    },
-    "maintenance": {
-      "title": "Entretien",
-      "description": "Vidanges, inspections et entretien préventif."
-    }
-  },
-  "footer": {
-    "tagline": "Au service des familles montréalaises depuis 1968.",
-    "thanks": "Merci de nous choisir.",
-    "quickLinks": "Liens rapides",
-    "home": "Accueil",
-    "services": "Services",
-    "contact": "Nous joindre",
-    "contactUs": "Nous joindre",
-    "hours": "Lun–Ven : 8h30 – 16h00",
-    "weekend": "Sam–Dim : Fermé",
-    "copyright": "© 2024 Centre D'Auto Allard. Tous droits réservés.",
-    "madeBy": "Fait avec soin à Montréal"
+  "notFound": {
+    "message": "Cette page n'existe pas ou a été déplacée.",
+    "back": "Retour"
   },
   "servicePage": {
-    "eyebrow": "Services automobiles",
+    "metadataTitle": "Services de mécanique à Montréal | Centre D'Auto Allard",
+    "metadataDescription": "Découvrez nos services de mécanique, d'antirouille, de lave-auto et de pneus au Centre D'Auto Allard à Montréal.",
     "title": "Nos services",
     "subtitle": "Des services automobiles complets, forts de plus de 60 ans d'expérience.",
     "mechanics": {
@@ -96,29 +60,16 @@
         "Réparation de crevaison",
         "Pneus neufs à vendre"
       ]
-    },
-    "maintenance": {
-      "title": "Entretien",
-      "items": [
-        "Vidange d'huile",
-        "Filtre à air",
-        "Bougies",
-        "Liquide de frein",
-        "Antigel",
-        "Antirouille"
-      ]
     }
   },
   "contactPage": {
-    "eyebrow": "Nous joindre",
+    "metadataTitle": "Nous joindre | Centre D'Auto Allard à Montréal",
+    "metadataDescription": "Appelez ou visitez le Centre D'Auto Allard au 2350, rue Allard à Montréal. Ouvert du lundi au vendredi de 8 h 30 à 16 h.",
     "title": "Viens nous voir",
-    "call": "Appeler maintenant",
     "directions": "Directions",
-    "visit": "Adresse et heures",
     "weekdays": "Lun – Ven",
     "weekend": "Sam – Dim",
     "weekdaysHours": "8h30 – 16h00",
-    "weekendHours": "Fermé",
-    "mapTitle": "Carte de Centre D'Auto Allard"
+    "weekendHours": "Fermé"
   }
 }

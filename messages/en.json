@@ -7,62 +7,26 @@
     "home": "Home",
     "services": "Services",
     "contact": "Contact",
-    "call": "(514) 768-4455",
-    "back": "Back"
+    "back": "Back",
+    "label": "Main navigation"
   },
   "hero": {
     "eyebrow": "Family service you can trust since 1968",
     "title": "Centre D'Auto Allard",
     "subtitle": "Proudly serving the Ville-Émard community with honest service, expert mechanics, and quality car care.",
-    "cta": "Call us",
     "explore": "Our services"
   },
-  "stats": {
-    "since": "1968",
-    "sinceLabel": "Serving since 1968",
-    "rating": "4.3",
-    "ratingLabel": "Rated by our customers",
-    "metro": "Metro\nAccessible",
-    "metroLabel": "Steps from Monk Station",
-    "family": "Family\nOwned",
-    "familyLabel": "Three generations of trusted service"
+  "language": {
+    "en": "Switch to English",
+    "fr": "Switch to French"
   },
-  "services": {
-    "eyebrow": "OUR SERVICES",
-    "title": "Everything Your Car Needs",
-    "learnMore": "Learn More",
-    "mechanics": {
-      "title": "Mechanics",
-      "description": "Expert diagnostics and repairs for all makes and models."
-    },
-    "carwash": {
-      "title": "Carwash",
-      "description": "Professional car wash to keep your vehicle looking its best."
-    },
-    "tires": {
-      "title": "Tires",
-      "description": "Wide selection of tires and expert installation."
-    },
-    "maintenance": {
-      "title": "Maintenance",
-      "description": "Oil changes, inspections, and preventive maintenance."
-    }
-  },
-  "footer": {
-    "tagline": "Family service you can trust since 1968.",
-    "thanks": "Thank you for choosing us.",
-    "quickLinks": "Quick Links",
-    "home": "Home",
-    "services": "Services",
-    "contact": "Contact",
-    "contactUs": "Contact Us",
-    "hours": "Mon – Fri: 8:30 AM – 4:00 PM",
-    "weekend": "Sat – Sun: Closed",
-    "copyright": "© 2024 Centre D'Auto Allard. All rights reserved.",
-    "madeBy": "Made with care in Montreal"
+  "notFound": {
+    "message": "This page does not exist or has moved.",
+    "back": "Back"
   },
   "servicePage": {
-    "eyebrow": "Auto services",
+    "metadataTitle": "Auto Repair Services in Montreal | Centre D'Auto Allard",
+    "metadataDescription": "Explore mechanical repairs, rustproofing, car wash services and tire services from Centre D'Auto Allard in Montreal.",
     "title": "Our services",
     "subtitle": "Complete automotive services backed by over 60 years of experience.",
     "mechanics": {
@@ -96,29 +60,16 @@
         "Flat Tire Repair",
         "New Tires for Sale"
       ]
-    },
-    "maintenance": {
-      "title": "Maintenance",
-      "items": [
-        "Oil change",
-        "Air filter",
-        "Spark plugs",
-        "Brake fluid",
-        "Antifreeze",
-        "Rust proofing"
-      ]
     }
   },
   "contactPage": {
-    "eyebrow": "Contact",
+    "metadataTitle": "Contact Centre D'Auto Allard | Montreal Garage",
+    "metadataDescription": "Call or visit Centre D'Auto Allard at 2350 Rue Allard in Montreal. Open Monday to Friday from 8:30 AM to 4:00 PM.",
     "title": "Call or visit us",
-    "call": "Call now",
     "directions": "Directions",
-    "visit": "Address and hours",
     "weekdays": "Mon – Fri",
     "weekend": "Sat – Sun",
     "weekdaysHours": "8:30 AM – 4:00 PM",
-    "weekendHours": "Closed",
-    "mapTitle": "Map of Centre D'Auto Allard"
+    "weekendHours": "Closed"
   }
 }
