@@ -4,24 +4,24 @@
 
 @layer base {
   :root {
-    --background: 40 30% 98%;
-    --foreground: 210 18% 12%;
-    --card: 0 0% 100%;
-    --card-foreground: 210 18% 12%;
-    --primary: 356 72% 38%;
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 9%;
+    --card-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 208 28% 19%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 40 18% 92%;
-    --muted-foreground: 215 11% 34%;
-    --accent: 41 89% 53%;
-    --accent-foreground: 210 18% 12%;
+    --secondary: 222 47% 12%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 222 47% 12%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 72% 42%;
     --destructive-foreground: 0 0% 100%;
-    --border: 35 17% 82%;
-    --input: 35 17% 82%;
-    --ring: 356 72% 38%;
-    --radius: 0.5rem;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 217 91% 60%;
+    --radius: 0.75rem;
   }
 
   * {
@@ -30,9 +30,105 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
+    background-color: #0a0f1a;
+    min-width: 320px;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .page-card {
+    @apply w-full rounded-[18px] border bg-[#050b14]/60 px-5 py-5 shadow-[0_26px_80px_rgba(0,0,0,0.5)] backdrop-blur-xl sm:px-7 sm:py-8 lg:rounded-[22px] lg:px-9;
+    border-color: rgb(255 255 255 / 18%);
+  }
+
+  .page-heading {
+    @apply text-[clamp(2.25rem,11vw,3.25rem)] font-black leading-none text-white;
+  }
+
+  .page-divider {
+    @apply mx-auto mt-4 h-[2px] w-[78px] rounded-full bg-blue-500 shadow-[0_0_20px_rgba(59,130,246,1)] sm:mt-6;
+  }
+
+  .page-back {
+    @apply inline-flex min-h-11 items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 text-[12px] font-bold uppercase tracking-[0.16em] text-white/80 transition hover:bg-white/10 hover:text-white;
+  }
+
+  .wide-storefront-image {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    :root {
+      --wide-sign-top: clamp(5.5rem, 10dvh, 7rem);
+      --wide-image-width: min(100vw, 160rem);
+      --wide-sign-image-top: min(27vw, 40rem);
+      --wide-sign-height: min(14.1vw, 22.5625rem);
+    }
+
+    .wide-storefront-image {
+      position: absolute;
+      top: calc(var(--wide-sign-top) - var(--wide-sign-image-top));
+      left: 50%;
+      display: block;
+      width: var(--wide-image-width);
+      height: auto;
+      max-width: none;
+      transform: translateX(-50%);
+    }
+
+    .wide-page {
+      align-items: flex-start;
+      padding-top: calc(
+        var(--wide-sign-top) + var(--wide-sign-height) + clamp(2rem, 4dvh, 3.5rem)
+      ) !important;
+      padding-bottom: clamp(4rem, 8dvh, 8rem);
+    }
+
+    .wide-standard-container {
+      max-width: clamp(40rem, 58vw, 56rem) !important;
+    }
+
+    .wide-services-container {
+      max-width: clamp(60rem, 82vw, 90rem) !important;
+    }
+
+    .page-card {
+      padding: clamp(2rem, 2.5vw, 3rem);
+      border-radius: clamp(1.375rem, 1.5vw, 1.75rem);
+    }
+
+    .page-heading {
+      font-size: clamp(3.25rem, 4vw, 4.5rem);
+    }
+
+    .page-divider {
+      width: clamp(4.875rem, 6vw, 7rem);
+      margin-top: clamp(1.25rem, 2vh, 2rem);
+    }
+
+    .page-back {
+      min-height: 3rem;
+      padding-inline: 1.25rem;
+      font-size: 0.8125rem;
+    }
+
+    .wide-action {
+      min-height: clamp(3.5rem, 5vw, 4.25rem);
+      font-size: clamp(0.9375rem, 1.2vw, 1.0625rem);
+    }
+  }
+
+  @media (min-width: 2500px) and (min-height: 1400px) {
+    .wide-page {
+      padding-top: calc(
+        var(--wide-sign-top) + var(--wide-sign-height) + clamp(4rem, 5dvh, 5rem)
+      ) !important;
+    }
   }
 }
