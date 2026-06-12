@@ -8,7 +8,11 @@ This repository contains the static frontend for **Centre D'Auto Allard**. There
 
 ## Supported Versions
 
-Only the current production branch is supported. No older versions receive security updates.
+| Version | Supported |
+| ------- | --------- |
+| v1.0x   | Yes       |
+
+Only the current production version is supported. No older versions receive security updates.
 
 ---
 
