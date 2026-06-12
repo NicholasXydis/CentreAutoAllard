@@ -20,6 +20,9 @@
     "en": "Passer à l'anglais",
     "fr": "Passer au français"
   },
+  "accessibility": {
+    "skipToContent": "Aller au contenu principal"
+  },
   "notFound": {
     "message": "Cette page n'existe pas ou a été déplacée.",
     "back": "Retour à l'accueil"

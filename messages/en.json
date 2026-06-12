@@ -20,6 +20,9 @@
     "en": "Switch to English",
     "fr": "Switch to French"
   },
+  "accessibility": {
+    "skipToContent": "Skip to main content"
+  },
   "notFound": {
     "message": "This page does not exist or has moved.",
     "back": "Return home"
