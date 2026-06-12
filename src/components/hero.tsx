@@ -1,7 +1,7 @@
 'use client';
 
 import {LayoutGrid, Mail, Phone} from 'lucide-react';
-import {motion, type Variants} from 'framer-motion';
+import {motion, useReducedMotion, type Variants} from 'framer-motion';
 import Link from 'next/link';
 import {useLocale, useTranslations} from 'next-intl';
 import {Button} from '@/components/ui/button';
@@ -28,13 +28,14 @@ export function Hero() {
   const locale = useLocale();
   const t = useTranslations('hero');
   const nav = useTranslations('nav');
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <section className="wide-page flex min-h-dvh items-start px-4 pb-10 pt-[clamp(12rem,31dvh,19rem)] sm:px-6 sm:pb-12 sm:pt-32 [@media_(min-width:768px)_and_(max-width:1023px)_and_(orientation:portrait)]:pt-[clamp(17rem,28dvh,21rem)] [@media_(min-width:820px)_and_(min-height:1100px)_and_(orientation:portrait)]:pt-[30dvh]">
       <div className="wide-standard-container mx-auto w-full max-w-[390px] sm:max-w-[560px] lg:max-w-none">
         <motion.div
           variants={container}
-          initial="hidden"
+          initial={shouldReduceMotion ? false : 'hidden'}
           animate="show"
           className="page-card flex flex-col items-center text-center"
         >

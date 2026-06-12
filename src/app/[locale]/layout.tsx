@@ -55,6 +55,7 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
   const messages = await getMessages();
   const metadata = await getTranslations({locale, namespace: 'metadata'});
+  const accessibility = await getTranslations({locale, namespace: 'accessibility'});
   const businessSchema = {
     '@context': 'https://schema.org',
     '@type': 'AutoRepair',
@@ -84,6 +85,9 @@ export default async function LocaleLayout({
     <html lang={getHtmlLang(locale)} suppressHydrationWarning className={inter.variable}>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
+          <a href="#main-content" className="skip-link">
+            {accessibility('skipToContent')}
+          </a>
           {children}
         </NextIntlClientProvider>
         <script

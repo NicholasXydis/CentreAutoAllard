@@ -20,6 +20,9 @@ export default function GlobalNotFound() {
   return (
     <html lang="fr-CA" suppressHydrationWarning className={inter.variable}>
       <body>
+        <a href="#main-content" className="skip-link">
+          Aller au contenu / Skip to content
+        </a>
         <SiteShell>
           <section className="wide-page flex min-h-dvh items-center px-4 py-10 sm:px-6">
             <div className="wide-standard-container mx-auto w-full max-w-[390px] sm:max-w-[560px] lg:max-w-none">

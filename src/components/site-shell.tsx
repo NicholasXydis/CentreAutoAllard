@@ -2,7 +2,11 @@ import Image from 'next/image';
 
 export function SiteShell({children}: Readonly<{children: React.ReactNode}>) {
   return (
-    <main className="relative min-h-dvh overflow-x-hidden bg-[#050912] text-white">
+    <main
+      id="main-content"
+      tabIndex={-1}
+      className="relative min-h-dvh overflow-x-hidden bg-[#050912] text-white"
+    >
       <div className="fixed inset-0 overflow-hidden" aria-hidden="true">
         <Image
           src="/shop-front.png"

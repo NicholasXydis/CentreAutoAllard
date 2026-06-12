@@ -39,9 +39,37 @@
     min-width: 320px;
     overflow-x: hidden;
   }
+
+  :focus-visible {
+    outline: 3px solid rgb(96 165 250);
+    outline-offset: 3px;
+  }
+
+  #main-content:focus {
+    outline: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }
 
 @layer components {
+  .skip-link {
+    @apply fixed left-4 top-4 z-[100] -translate-y-24 rounded-md bg-white px-4 py-3 text-sm font-bold text-slate-950 shadow-lg transition-transform focus:translate-y-0;
+  }
+
   .page-card {
     @apply w-full rounded-[18px] border bg-[#050b14]/60 px-5 py-5 shadow-[0_26px_80px_rgba(0,0,0,0.5)] backdrop-blur-xl sm:px-7 sm:py-8 lg:rounded-[22px] lg:px-9;
     border-color: rgb(255 255 255 / 18%);

@@ -1,6 +1,6 @@
 'use client';
 
-import {motion} from 'framer-motion';
+import {motion, useReducedMotion} from 'framer-motion';
 import Link from 'next/link';
 import {useLocale, useTranslations} from 'next-intl';
 import {usePathname} from 'next/navigation';
@@ -10,6 +10,7 @@ export function Navbar() {
   const locale = useLocale();
   const t = useTranslations('nav');
   const pathname = usePathname();
+  const shouldReduceMotion = useReducedMotion();
   const normalizedPathname = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname;
 
   const links = [
@@ -20,7 +21,7 @@ export function Navbar() {
 
   return (
     <motion.header
-      initial={{opacity: 0, y: -20}}
+      initial={shouldReduceMotion ? false : {opacity: 0, y: -20}}
       animate={{opacity: 1, y: 0}}
       transition={{duration: 0.45, ease: [0.21, 0.47, 0.32, 0.98]}}
       className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-5 lg:pt-5"
