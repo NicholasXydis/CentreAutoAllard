@@ -1,13 +1,124 @@
 {
   "metadata": {
-    "title": "Centre D'Auto Allard",
-    "description": "Family auto shop in Montreal for auto repair and car wash services."
+    "title": "Centre D'Auto Allard — Auto Repair & Car Wash in Montreal",
+    "description": "Family garage in Montreal since 1968. General mechanics, tires, car wash and rust proofing steps from Monk metro."
   },
-  "home": {
-    "eyebrow": "Family garage since 1968",
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "contact": "Contact",
+    "call": "(514) 768-4455",
+    "back": "Back"
+  },
+  "hero": {
+    "eyebrow": "Family service you can trust since 1968",
     "title": "Centre D'Auto Allard",
-    "subtitle": "Auto repair, maintenance, and car wash service steps from Monk metro.",
-    "primaryCta": "Book appointment",
-    "secondaryCta": "Call us"
+    "subtitle": "Proudly serving the Ville-Émard community with honest service, expert mechanics, and quality car care.",
+    "cta": "Call us",
+    "explore": "Our services"
+  },
+  "stats": {
+    "since": "1968",
+    "sinceLabel": "Serving since 1968",
+    "rating": "4.3",
+    "ratingLabel": "Rated by our customers",
+    "metro": "Metro\nAccessible",
+    "metroLabel": "Steps from Monk Station",
+    "family": "Family\nOwned",
+    "familyLabel": "Three generations of trusted service"
+  },
+  "services": {
+    "eyebrow": "OUR SERVICES",
+    "title": "Everything Your Car Needs",
+    "learnMore": "Learn More",
+    "mechanics": {
+      "title": "Mechanics",
+      "description": "Expert diagnostics and repairs for all makes and models."
+    },
+    "carwash": {
+      "title": "Carwash",
+      "description": "Professional car wash to keep your vehicle looking its best."
+    },
+    "tires": {
+      "title": "Tires",
+      "description": "Wide selection of tires and expert installation."
+    },
+    "maintenance": {
+      "title": "Maintenance",
+      "description": "Oil changes, inspections, and preventive maintenance."
+    }
+  },
+  "footer": {
+    "tagline": "Family service you can trust since 1968.",
+    "thanks": "Thank you for choosing us.",
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "services": "Services",
+    "contact": "Contact",
+    "contactUs": "Contact Us",
+    "hours": "Mon – Fri: 8:30 AM – 4:00 PM",
+    "weekend": "Sat – Sun: Closed",
+    "copyright": "© 2024 Centre D'Auto Allard. All rights reserved.",
+    "madeBy": "Made with care in Montreal"
+  },
+  "servicePage": {
+    "eyebrow": "Auto services",
+    "title": "Our services",
+    "subtitle": "Complete automotive services backed by over 60 years of experience.",
+    "mechanics": {
+      "title": "Mechanics",
+      "items": [
+        "Rustproofing Treatment",
+        "Oil Change",
+        "Vehicle Inspection",
+        "Battery Replacement",
+        "Brake Replacement",
+        "Suspension Work",
+        "Exhaust & Muffler Repair"
+      ]
+    },
+    "carwash": {
+      "title": "Carwash",
+      "items": [
+        "Wash – Inside & Out",
+        "Hand Wax",
+        "Liquid Wax",
+        "Headlight Restoration",
+        "Partial Interior Shampoo",
+        "Complete Interior Shampoo"
+      ]
+    },
+    "tires": {
+      "title": "Tires",
+      "items": [
+        "Tire Installation (Winter & Summer)",
+        "Wheel Balancing",
+        "Flat Tire Repair",
+        "New Tires for Sale"
+      ]
+    },
+    "maintenance": {
+      "title": "Maintenance",
+      "items": [
+        "Oil change",
+        "Air filter",
+        "Spark plugs",
+        "Brake fluid",
+        "Antifreeze",
+        "Rust proofing"
+      ]
+    }
+  },
+  "contactPage": {
+    "eyebrow": "Contact",
+    "title": "Call or visit us",
+    "call": "Call now",
+    "directions": "Directions",
+    "visit": "Address and hours",
+    "weekdays": "Mon – Fri",
+    "weekend": "Sat – Sun",
+    "weekdaysHours": "8:30 AM – 4:00 PM",
+    "weekendHours": "Closed",
+    "mapTitle": "Map of Centre D'Auto Allard"
   }
 }
