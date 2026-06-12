@@ -5,7 +5,7 @@ import {useLocale, useTranslations} from 'next-intl';
 import {SiteShell} from '@/components/site-shell';
 import {Button} from '@/components/ui/button';
 
-export default function ErrorPage({unstable_retry}: {unstable_retry: () => void}) {
+export default function ErrorPage({reset}: Readonly<{reset: () => void}>) {
   const locale = useLocale();
   const t = useTranslations('errorPage');
 
@@ -23,7 +23,7 @@ export default function ErrorPage({unstable_retry}: {unstable_retry: () => void}
               <Button
                 type="button"
                 size="lg"
-                onClick={unstable_retry}
+                onClick={reset}
                 className="wide-action h-[52px] rounded-[12px] bg-blue-600 text-white shadow-[0_0_30px_rgba(37,99,235,0.5)] hover:bg-blue-500"
               >
                 {t('retry')}
