@@ -22,7 +22,13 @@
   },
   "notFound": {
     "message": "This page does not exist or has moved.",
-    "back": "Back"
+    "back": "Return home"
+  },
+  "errorPage": {
+    "title": "Something went wrong",
+    "message": "We could not load this page. Please try again or return home.",
+    "retry": "Try again",
+    "home": "Return home"
   },
   "servicePage": {
     "metadataTitle": "Auto Repair Services in Montreal | Centre D'Auto Allard",
@@ -66,6 +72,7 @@
     "metadataTitle": "Contact Centre D'Auto Allard | Montreal Garage",
     "metadataDescription": "Call or visit Centre D'Auto Allard at 2350 Rue Allard in Montreal. Open Monday to Friday from 8:30 AM to 4:00 PM.",
     "title": "Call or visit us",
+    "address": "2350 Rue Allard, Montreal, QC H4E 2K9",
     "directions": "Directions",
     "weekdays": "Mon – Fri",
     "weekend": "Sat – Sun",

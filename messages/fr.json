@@ -22,7 +22,13 @@
   },
   "notFound": {
     "message": "Cette page n'existe pas ou a été déplacée.",
-    "back": "Retour"
+    "back": "Retour à l'accueil"
+  },
+  "errorPage": {
+    "title": "Une erreur est survenue",
+    "message": "Nous n'avons pas pu charger cette page. Réessayez ou retournez à l'accueil.",
+    "retry": "Réessayer",
+    "home": "Retour à l'accueil"
   },
   "servicePage": {
     "metadataTitle": "Services de mécanique à Montréal | Centre D'Auto Allard",
@@ -66,6 +72,7 @@
     "metadataTitle": "Nous joindre | Centre D'Auto Allard à Montréal",
     "metadataDescription": "Appelez ou visitez le Centre D'Auto Allard au 2350, rue Allard à Montréal. Ouvert du lundi au vendredi de 8 h 30 à 16 h.",
     "title": "Viens nous voir",
+    "address": "2350, rue Allard, Montréal, QC H4E 2K9",
     "directions": "Directions",
     "weekdays": "Lun – Ven",
     "weekend": "Sam – Dim",

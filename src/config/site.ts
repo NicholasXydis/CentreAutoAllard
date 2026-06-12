@@ -4,7 +4,6 @@ export const site = {
   socialImage: '/shop-front.png',
   phone: '+15147684455',
   phoneDisplay: '(514) 768-4455',
-  addressFull: '2350 Rue Allard, Montreal, QC H4E 2K9',
   address: {
     street: '2350 Rue Allard',
     city: 'Montreal',
