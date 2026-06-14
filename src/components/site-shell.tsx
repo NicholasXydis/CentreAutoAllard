@@ -21,7 +21,6 @@ export function SiteShell({children}: Readonly<{children: React.ReactNode}>) {
           alt=""
           width={1022}
           height={1538}
-          priority
           sizes="(min-width: 1024px) min(100vw, 2560px), 1px"
           className="wide-storefront-image"
         />
