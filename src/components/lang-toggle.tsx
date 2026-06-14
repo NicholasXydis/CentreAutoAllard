@@ -1,9 +1,11 @@
 'use client';
 
+import {AnimatePresence, motion, useReducedMotion} from 'framer-motion';
 import {useLocale, useTranslations} from 'next-intl';
 import {usePathname, useRouter} from 'next/navigation';
 import {useTransition} from 'react';
 import {cn} from '@/lib/utils';
+import {DURATION, EASE, pressableHover, pressableTap, pressTransition} from '@/lib/motion';
 
 function QuebecFlag() {
   const fleur =
@@ -42,6 +44,7 @@ export function LangToggle({className}: Readonly<{className?: string}>) {
   const router = useRouter();
   const pathname = usePathname();
   const [isPending, startTransition] = useTransition();
+  const shouldReduceMotion = useReducedMotion();
 
   const nextLocale = locale === 'fr' ? 'en' : 'fr';
   const label = locale === 'fr' ? 'EN' : 'FR';
@@ -52,17 +55,30 @@ export function LangToggle({className}: Readonly<{className?: string}>) {
   }
 
   return (
-    <button
+    <motion.button
       onClick={handleSwitch}
       disabled={isPending}
       aria-label={t(nextLocale)}
+      whileHover={shouldReduceMotion ? undefined : pressableHover}
+      whileTap={shouldReduceMotion ? undefined : pressableTap}
+      transition={pressTransition}
       className={cn(
-        'flex h-[38px] items-center gap-2 rounded-full border border-white/20 bg-white/6 px-3 text-[13px] font-bold text-white shadow-[0_4px_16px_rgba(0,0,0,0.28)] backdrop-blur-xl transition hover:bg-white/10 disabled:opacity-50',
+        'flex h-[38px] touch-manipulation items-center gap-2 rounded-full border border-white/20 bg-white/6 px-3 text-[13px] font-bold text-white shadow-[0_4px_16px_rgba(0,0,0,0.28)] backdrop-blur-xl transition-colors hover:bg-white/10 disabled:opacity-50',
         className
       )}
     >
-      {nextLocale === 'fr' ? <QuebecFlag /> : <CanadaFlag />}
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.span
+          key={nextLocale}
+          initial={shouldReduceMotion ? false : {opacity: 0, scale: 0.85}}
+          animate={{opacity: 1, scale: 1}}
+          exit={shouldReduceMotion ? undefined : {opacity: 0, scale: 0.85}}
+          transition={{duration: DURATION.micro, ease: EASE}}
+        >
+          {nextLocale === 'fr' ? <QuebecFlag /> : <CanadaFlag />}
+        </motion.span>
+      </AnimatePresence>
       <span>{label}</span>
-    </button>
+    </motion.button>
   );
 }
