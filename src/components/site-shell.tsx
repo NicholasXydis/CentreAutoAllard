@@ -9,7 +9,7 @@ export function SiteShell({children}: Readonly<{children: React.ReactNode}>) {
     >
       <div className="fixed inset-0 overflow-hidden" aria-hidden="true">
         <Image
-          src="/shop-front.png"
+          src="/shop-front.webp"
           alt=""
           fill
           priority
@@ -17,7 +17,7 @@ export function SiteShell({children}: Readonly<{children: React.ReactNode}>) {
           className="object-cover object-center lg:hidden"
         />
         <Image
-          src="/shop-front.png"
+          src="/shop-front.webp"
           alt=""
           width={1022}
           height={1538}

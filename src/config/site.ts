@@ -1,7 +1,7 @@
 export const site = {
   name: "Centre D'Auto Allard",
   url: 'https://centreautoallard.ca',
-  socialImage: '/shop-front.png',
+  socialImage: '/shop-front.webp',
   phone: '+15147684455',
   phoneDisplay: '(514) 768-4455',
   address: {
