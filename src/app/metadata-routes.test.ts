@@ -6,7 +6,7 @@ describe('metadata routes', () => {
   it('allows crawling and publishes the sitemap URL', () => {
     expect(robots()).toEqual({
       rules: {userAgent: '*', allow: '/'},
-      sitemap: 'https://centreautoallard.ca/sitemap.xml'
+      sitemap: 'https://centredautoallard.ca/sitemap.xml'
     });
   });
 
@@ -15,12 +15,12 @@ describe('metadata routes', () => {
 
     expect(entries).toHaveLength(6);
     expect(entries.map(({url}) => url)).toEqual([
-      'https://centreautoallard.ca/fr/',
-      'https://centreautoallard.ca/en/',
-      'https://centreautoallard.ca/fr/services/',
-      'https://centreautoallard.ca/en/services/',
-      'https://centreautoallard.ca/fr/contact/',
-      'https://centreautoallard.ca/en/contact/'
+      'https://centredautoallard.ca/fr/',
+      'https://centredautoallard.ca/en/',
+      'https://centredautoallard.ca/fr/services/',
+      'https://centredautoallard.ca/en/services/',
+      'https://centredautoallard.ca/fr/contact/',
+      'https://centredautoallard.ca/en/contact/'
     ]);
 
     for (const entry of entries) {

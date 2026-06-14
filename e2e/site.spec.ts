@@ -32,11 +32,11 @@ for (const pageData of localizedPages) {
       await expect(page.getByRole('heading', {level: 1})).toHaveText(pageData.homeHeading);
       await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
         'href',
-        `https://centreautoallard.ca/${pageData.locale}/`
+        `https://centredautoallard.ca/${pageData.locale}/`
       );
       await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
         'content',
-        'https://centreautoallard.ca/shop-front.webp'
+        'https://centredautoallard.ca/shop-front.webp'
       );
       await expect(page.getByRole('link', {name: '(514) 768-4455'})).toHaveAttribute(
         'href',
