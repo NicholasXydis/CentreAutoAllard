@@ -98,6 +98,7 @@ test('unknown routes show the bilingual global 404 with recovery links', async (
 
   expect(response?.status()).toBe(404);
   await expect(page.getByRole('heading', {name: '404'})).toBeVisible();
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex');
   await expect(page.getByRole('link', {name: 'Français'})).toHaveAttribute('href', '/fr/');
   await expect(page.getByRole('link', {name: 'English'})).toHaveAttribute('href', '/en/');
 });
