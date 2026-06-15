@@ -74,7 +74,10 @@ for (const pageData of localizedPages) {
       const directions = page.getByRole('link', {
         name: pageData.locale === 'fr' ? 'Directions' : 'Directions'
       });
-      await expect(directions).toHaveAttribute('href', /^https:\/\/maps\.google\.com/);
+      await expect(directions).toHaveAttribute(
+        'href',
+        'https://maps.app.goo.gl/Q1tLDXKaXT3WDHrU9'
+      );
     });
   });
 }

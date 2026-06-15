@@ -11,7 +11,7 @@ export const site = {
     postalCode: 'H4E 2K9',
     country: 'CA'
   },
-  googleMapsUrl: 'https://maps.google.com/?q=2350+Rue+Allard+Montreal+QC',
+  googleMapsUrl: 'https://maps.app.goo.gl/Q1tLDXKaXT3WDHrU9',
   hours: {
     days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
     opens: '08:30',
