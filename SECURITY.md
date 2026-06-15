@@ -1,35 +1,43 @@
 # Security Policy
 
-## Scope
-
-This repository contains the static frontend for **Centre D'Auto Allard**. There is no backend, database, authentication layer, or private API surface in this project. The attack surface is limited to the built static site and its deployment configuration (Docker, Nginx).
-
----
-
-## Supported Versions
+## Supported Version
 
 | Version | Supported |
 | ------- | --------- |
-| v1.0x   | Yes       |
+| 1.0.x   | Yes       |
 
 Only the current production version is supported. No older versions receive security updates.
 
----
-
 ## Reporting a Vulnerability
 
-If you discover a security issue, please report it **privately** rather than opening a public issue. Contact the repository owner directly with details of the issue.
+Do not open a public issue for suspected vulnerabilities, leaked credentials, cross-site scripting, security-header bypasses, or production exposure.
 
-Please include:
+Report security issues privately to the repository owner with:
 
-- A description of the issue and its potential impact
-- The affected file(s) or configuration
-- Steps to reproduce, if applicable
+- the affected page, component, dependency, or configuration
+- reproduction steps
+- expected impact
+- relevant logs or screenshots with secrets removed
 
-We'll acknowledge reports as soon as possible and follow up once the issue has been reviewed.
+Valid reports will be reviewed as quickly as possible and prioritized based on severity and exploitability.
 
----
+## Scope
 
-## Secrets and Configuration
+In scope:
 
-Do not commit secrets, private keys, deployment credentials, API tokens, or populated `.env` files. Public, non-sensitive frontend configuration belongs in `.env.example` only.
+- cross-site scripting and unsafe client-side behavior
+- Content Security Policy or security-header bypasses
+- sensitive information or credential exposure
+- vulnerable production dependencies
+- Docker, Nginx, GitHub Actions, or deployment misconfiguration
+- issues affecting the integrity or availability of the production website
+
+Out of scope:
+
+- denial-of-service testing against production without permission
+- social engineering
+- automated spam or abusive traffic
+- reports requiring access to secrets, private keys, infrastructure, or accounts you do not own
+- issues that apply only to unsupported browsers or modified client environments
+
+This repository contains a statically exported website. It has no backend, database, authentication system, user accounts, or private API.
