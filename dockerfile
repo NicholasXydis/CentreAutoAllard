@@ -13,7 +13,7 @@ ENV NEXT_PUBLIC_GA_MEASUREMENT_ID=$NEXT_PUBLIC_GA_MEASUREMENT_ID
 RUN echo "GA ID is: $NEXT_PUBLIC_GA_MEASUREMENT_ID"
 RUN npm run build
 
-FROM nginx@sha256:8b1e78743a03dbb2c95171cc58639fef29abc8816598e27fb910ed2e621e589a
+FROM nginx@sha256:608a100c71651bf5b773c89083b4a1ad7ef4b2bd05d7a7e552271e03123692ad
 
 RUN apk upgrade --no-cache \
     && rm /etc/nginx/conf.d/default.conf
