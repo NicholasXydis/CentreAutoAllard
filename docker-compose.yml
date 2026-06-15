@@ -3,9 +3,9 @@ services:
     image: ${CENTRE_AUTO_ALLARD_IMAGE:-ghcr.io/nicholasxydis/centre-auto-allard:latest}
     restart: unless-stopped
     ports:
-      - "127.0.0.1:8081:8080"
+      - '127.0.0.1:8081:8080'
     healthcheck:
-      test: ["CMD", "wget", "--quiet", "--spider", "http://127.0.0.1:8080/health"]
+      test: ['CMD', 'wget', '--quiet', '--spider', 'http://127.0.0.1:8080/health']
       interval: 30s
       timeout: 10s
       retries: 3
@@ -26,5 +26,5 @@ services:
     logging:
       driver: json-file
       options:
-        max-size: "5m"
-        max-file: "3"
+        max-size: '5m'
+        max-file: '3'

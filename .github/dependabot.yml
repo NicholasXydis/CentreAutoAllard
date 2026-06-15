@@ -5,43 +5,43 @@ updates:
     schedule:
       interval: weekly
       day: monday
-      time: "09:00"
+      time: '09:00'
       timezone: America/Toronto
     open-pull-requests-limit: 5
     groups:
       routine-updates:
         applies-to: version-updates
         patterns:
-          - "*"
+          - '*'
         update-types:
           - minor
           - patch
     ignore:
-      - dependency-name: "*"
+      - dependency-name: '*'
         update-types:
           - version-update:semver-major
       - dependency-name: tailwindcss
         versions:
-          - ">=4"
+          - '>=4'
 
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: weekly
       day: monday
-      time: "09:00"
+      time: '09:00'
       timezone: America/Toronto
     open-pull-requests-limit: 5
     groups:
       routine-updates:
         applies-to: version-updates
         patterns:
-          - "*"
+          - '*'
         update-types:
           - minor
           - patch
     ignore:
-      - dependency-name: "*"
+      - dependency-name: '*'
         update-types:
           - version-update:semver-major
 
@@ -51,19 +51,19 @@ updates:
     schedule:
       interval: weekly
       day: monday
-      time: "09:00"
+      time: '09:00'
       timezone: America/Toronto
     open-pull-requests-limit: 5
     groups:
       routine-updates:
         applies-to: version-updates
         patterns:
-          - "*"
+          - '*'
         update-types:
           - minor
           - patch
     ignore:
-      - dependency-name: "*"
+      - dependency-name: '*'
         update-types:
           - version-update:semver-major
 
@@ -72,18 +72,18 @@ updates:
     schedule:
       interval: weekly
       day: monday
-      time: "09:00"
+      time: '09:00'
       timezone: America/Toronto
     open-pull-requests-limit: 5
     groups:
       routine-updates:
         applies-to: version-updates
         patterns:
-          - "*"
+          - '*'
         update-types:
           - minor
           - patch
     ignore:
-      - dependency-name: "*"
+      - dependency-name: '*'
         update-types:
           - version-update:semver-major

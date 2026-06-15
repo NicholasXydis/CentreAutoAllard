@@ -8,7 +8,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "30 10 * * 1"
+    - cron: '30 10 * * 1'
   workflow_dispatch:
 
 permissions:
@@ -62,7 +62,7 @@ jobs:
           output: trivy-repository.sarif
           severity: HIGH,CRITICAL
           ignore-unfixed: true
-          exit-code: "0"
+          exit-code: '0'
 
       - name: Upload repository scan
         uses: github/codeql-action/upload-sarif@v4
@@ -79,7 +79,7 @@ jobs:
           format: table
           severity: HIGH,CRITICAL
           ignore-unfixed: true
-          exit-code: "1"
+          exit-code: '1'
 
       - name: Build image
         run: |
@@ -95,7 +95,7 @@ jobs:
           output: trivy-image.sarif
           severity: HIGH,CRITICAL
           ignore-unfixed: true
-          exit-code: "0"
+          exit-code: '0'
 
       - name: Upload image scan
         uses: github/codeql-action/upload-sarif@v4
@@ -110,4 +110,4 @@ jobs:
           format: table
           severity: HIGH,CRITICAL
           ignore-unfixed: true
-          exit-code: "1"
+          exit-code: '1'
