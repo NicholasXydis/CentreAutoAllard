@@ -55,6 +55,16 @@ Centre D'Auto Allard is the production website for a family-owned automotive ser
 
 The site is statically generated with Next.js and deployed as a hardened Nginx container on a Linux VPS. GitHub Actions validates every change, scans the source and production image, publishes commit-SHA-tagged images to GHCR, and deploys approved releases over SSH. Cloudflare provides the public edge in front of the origin.
 
+## Quality Highlights
+
+- Mobile-first responsive design with dedicated desktop scaling.
+- Semantic HTML and keyboard-accessible interactions.
+- Reduced-motion behavior for users who request it.
+- Optimized static delivery with long-lived immutable asset caching.
+- Localized search metadata across all public routes.
+- Dedicated social preview imagery using the recommended Open Graph aspect ratio.
+- Production monitoring through container health checks, smoke tests, and GA4 analytics.
+
 ## Features
 
 - **Bilingual experience:** complete French and English routes powered by `next-intl`.
@@ -115,20 +125,13 @@ CentreAutoAllard/
 
 ## Tech Stack
 
-| Area          | Stack                                                                        |
-| ------------- | ---------------------------------------------------------------------------- |
-| Framework     | Next.js 16 App Router, React 19, static export                               |
-| Language      | TypeScript                                                                   |
-| Styling       | Tailwind CSS, class-variance-authority, tailwind-merge                       |
-| Localization  | next-intl, French and English localized routes                               |
-| Motion and UI | Framer Motion, Radix Slot, Lucide React                                      |
-| SEO           | Next.js Metadata API, sitemap, robots, canonical and alternate URLs, JSON-LD |
-| Analytics     | Google Analytics 4                                                           |
-| Testing       | Vitest, Testing Library, jsdom, Playwright                                   |
-| Security      | CodeQL, Trivy, CSP and hardened Nginx response headers                       |
-| DevOps        | Docker, Docker Compose, Nginx, GHCR, GitHub Actions, SSH deployment          |
-| Monitoring    | UptimeRobot, container health checks, deployment smoke tests                 |
-| Production    | Cloudflare, Linux VPS                                                        |
+| Area       | Stack                                               |
+| ---------- | --------------------------------------------------- |
+| Frontend   | TypeScript, React 19, Next.js 16                    |
+| Styling    | Tailwind CSS, Framer Motion, Lucide React           |
+| DevOps     | Docker, GitHub Actions, Nginx, Cloudflare, Linux VPS |
+| Testing    | Vitest, Playwright                                  |
+| Monitoring | UptimeRobot                                         |
 
 ## Testing
 
@@ -138,16 +141,14 @@ CentreAutoAllard/
 | End-to-end checks        |     18 | Desktop and mobile Chromium                   |
 | **Total**                | **51** | CI-enforced                                   |
 
-The automated suite covers localization, SEO metadata, analytics loading, navigation, responsive content, reduced motion, Nginx behavior, static metadata routes, error recovery, contact actions, and production route smoke tests.
-
 ## CI/CD
 
-| Workflow          | File                                      | Purpose                                                                                 |
-| ----------------- | ----------------------------------------- | --------------------------------------------------------------------------------------- |
-| CI                | `.github/workflows/ci.yml`                | Typecheck, lint, coverage, static build, Playwright, and Compose validation             |
-| Security          | `.github/workflows/security.yml`          | CodeQL analysis plus Trivy source, secret, misconfiguration, and image scans            |
-| Publish Images    | `.github/workflows/publish-images.yml`    | Build, scan, label, and publish commit-SHA-tagged GHCR images after required gates pass |
-| Deploy Production | `.github/workflows/deploy-production.yml` | Deploy a selected image to the VPS over SSH and verify production health                |
+| Workflow          | File                                      | Purpose                                                   |
+| ----------------- | ----------------------------------------- | --------------------------------------------------------- |
+| CI                | `.github/workflows/ci.yml`                | Typecheck, lint, coverage, static build, Playwright E2E   |
+| Security          | `.github/workflows/security.yml`          | CodeQL and Trivy filesystem/image scans                   |
+| Publish Images    | `.github/workflows/publish-images.yml`    | Build, scan, and push GHCR image                          |
+| Deploy Production | `.github/workflows/deploy-production.yml` | SSH deploy to Linux VPS and production smoke tests        |
 
 <div align="center">
   <img src="docs/ci-cd-flow.svg" alt="CI and security checks gate image publishing, production deployment, and smoke testing" width="100%">
@@ -157,24 +158,14 @@ Any required gate failure blocks the release.
 
 ## Production Engineering
 
-- Static output keeps the runtime surface small: no application server, database, authentication, or private API.
-- The Nginx container runs as a non-root user with a read-only filesystem and isolated temporary mounts.
+- Static output keeps the runtime surface small: no app server, database, authentication, or private API.
+- The Nginx container runs as a non-root user with a read-only filesystem.
 - Production images are pinned and published by commit SHA for traceable deployments.
-- CI artifacts retain coverage, Playwright reports, and test results for diagnosis.
-- Deployment records capture the image SHA and UTC release timestamp on the VPS.
-- Health checks run at both the container and public production endpoint.
-- External uptime monitoring through UptimeRobot checks production availability every five minutes.
-- Repository and container scans fail on high or critical fixed vulnerabilities.
+- Deployment records capture the deployed SHA, image tag, and UTC release timestamp.
+- Public health and route smoke tests run after every production deployment.
+- UptimeRobot checks production availability every five minutes.
 
 ## Quality Gates
-
-### Lighthouse
-
-<div align="center">
-  <img src="docs/screenshots/lighthouse.png" alt="Lighthouse scores: 99 performance and 100 accessibility, best practices, and SEO" width="100%">
-</div>
-
-**Desktop Lighthouse audit:** 99 Performance, 100 Accessibility, 100 Best Practices, and 100 SEO.
 
 ### SSL Labs
 
@@ -184,6 +175,14 @@ Any required gate failure blocks the release.
 
 **TLS configuration:** A+ across all assessed Cloudflare edge endpoints.
 
+### Lighthouse
+
+<div align="center">
+  <img src="docs/screenshots/lighthouse.png" alt="Lighthouse scores: 99 performance and 100 accessibility, best practices, and SEO" width="100%">
+</div>
+
+**Desktop Lighthouse audit:** 99 Performance, 100 Accessibility, 100 Best Practices, and 100 SEO.
+
 ### Uptime Monitoring
 
 <div align="center">
@@ -191,16 +190,6 @@ Any required gate failure blocks the release.
 </div>
 
 **External monitoring:** UptimeRobot checks the production site every five minutes. Container health checks, deployment smoke tests, and the public `/health` endpoint provide additional release and runtime verification.
-
-## Quality Highlights
-
-- Mobile-first responsive design with dedicated desktop scaling.
-- Semantic HTML and keyboard-accessible interactions.
-- Reduced-motion behavior for users who request it.
-- Optimized static delivery with long-lived immutable asset caching.
-- Localized search metadata across all public routes.
-- Dedicated social preview imagery using the recommended Open Graph aspect ratio.
-- Production monitoring through container health checks, smoke tests, and GA4 analytics.
 
 ## License
 
