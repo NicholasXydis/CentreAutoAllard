@@ -69,6 +69,7 @@ jobs:
       - name: Build image
         run: |
           docker build \
+            --build-arg NEXT_PUBLIC_GA_MEASUREMENT_ID="${{ secrets.NEXT_PUBLIC_GA_MEASUREMENT_ID }}" \
             --label "org.opencontainers.image.source=https://github.com/${GITHUB_REPOSITORY}" \
             --label "org.opencontainers.image.revision=${HEAD_SHA}" \
             --tag "${IMAGE}" \
