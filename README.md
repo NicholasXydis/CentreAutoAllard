@@ -51,7 +51,7 @@ A fast, accessible, bilingual website for a family-owned Montreal automotive ser
 
 ## About
 
-Centre D'Auto Allard is the production website for a family-owned automotive service centre in Montreal. It gives French- and English-speaking customers a clear, mobile-first way to explore services, call the garage, get directions, and find current business hours.
+Centre D'Auto Allard is the production website for a family-owned automotive service centre in Montreal. It gives French and English speaking customers a clear, mobile-first way to explore services, call the garage, get directions, and find current business hours.
 
 The site is statically generated with Next.js and deployed as a hardened Nginx container on a Linux VPS. GitHub Actions validates every change, scans the source and production image, publishes commit-SHA-tagged images to GHCR, and deploys approved releases over SSH. Cloudflare provides the public edge in front of the origin.
 
@@ -63,7 +63,7 @@ The site is statically generated with Next.js and deployed as a hardened Nginx c
 - Optimized static delivery with long-lived immutable asset caching.
 - Localized search metadata across all public routes.
 - Dedicated social preview imagery using the recommended Open Graph aspect ratio.
-- Production monitoring through container health checks, smoke tests, and GA4 analytics.
+- Production monitoring through container health checks, smoke tests, and Google Analytics.
 
 ## Features
 
@@ -74,7 +74,7 @@ The site is statically generated with Next.js and deployed as a hardened Nginx c
 - **Social sharing:** dedicated 1200×630 Open Graph image for Facebook, LinkedIn, Discord, and X.
 - **Accessibility:** semantic structure, keyboard navigation, skip links, visible focus states, localized labels, and reduced-motion support.
 - **Motion design:** polished page transitions and interactions using Framer Motion.
-- **Analytics:** GA4 page-view tracking built into the static production bundle.
+- **Analytics:** Google Analytics page-view tracking built into the static production bundle.
 - **Resilience:** localized 404 and error recovery experiences with production health checks.
 - **Security headers:** CSP, HSTS, frame protection, MIME sniffing protection, and restrictive permissions policy.
 
@@ -103,7 +103,7 @@ CentreAutoAllard/
 <pre>
 ┌─────────────────────────────────────────────────────────┐
 │                    Customer Browser                     │
-│       Responsive FR/EN UI, SEO metadata, GA4 events     │
+│   Responsive FR/EN UI, SEO metadata, Google Analytics   │
 └────────────────────────────┬────────────────────────────┘
                              │ HTTPS
 ┌────────────────────────────▼────────────────────────────┐
@@ -131,7 +131,7 @@ CentreAutoAllard/
 | Styling    | Tailwind CSS, Framer Motion, Lucide React           |
 | DevOps     | Docker, GitHub Actions, Nginx, Cloudflare, Linux VPS |
 | Testing    | Vitest, Playwright                                  |
-| Monitoring | UptimeRobot                                         |
+| Monitoring | UptimeRobot, Google Analytics                       |
 
 ## Testing
 
