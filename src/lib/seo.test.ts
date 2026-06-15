@@ -37,11 +37,11 @@ describe('SEO helpers', () => {
       url: `/${locale}/contact/`,
       locale: openGraphLocale,
       alternateLocale,
-      images: [{url: '/shop-front.webp', width: 1022, height: 1538}]
+      images: [{url: '/og-image.webp', width: 1200, height: 630}]
     });
     expect(metadata.twitter).toMatchObject({
       card: 'summary_large_image',
-      images: ['/shop-front.webp']
+      images: ['/og-image.webp']
     });
   });
 });

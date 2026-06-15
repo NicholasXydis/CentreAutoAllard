@@ -62,8 +62,8 @@ export function createLocalizedMetadata({
       images: [
         {
           url: site.socialImage,
-          width: 1022,
-          height: 1538,
+          width: 1200,
+          height: 630,
           alt: site.name
         }
       ]

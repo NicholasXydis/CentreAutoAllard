@@ -36,7 +36,7 @@ for (const pageData of localizedPages) {
       );
       await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
         'content',
-        'https://centredautoallard.ca/shop-front.webp'
+        'https://centredautoallard.ca/og-image.webp'
       );
       await expect(page.getByRole('link', {name: '(514) 768-4455'})).toHaveAttribute(
         'href',
