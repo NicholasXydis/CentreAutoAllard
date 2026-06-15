@@ -51,12 +51,6 @@ A fast, accessible, bilingual website for a family-owned Montreal automotive ser
 
 <br>
 
-<div align="center">
-  <a href="https://centredautoallard.ca/fr/">
-    <img src="public/og-image.webp" alt="Centre D'Auto Allard storefront" width="92%">
-  </a>
-</div>
-
 ## About
 
 Centre D'Auto Allard is the production website for a family-owned automotive service centre in Montreal. It gives French- and English-speaking customers a clear, mobile-first way to explore services, call the garage, get directions, and find current business hours.
@@ -157,12 +151,16 @@ The automated suite covers localization, SEO metadata, analytics loading, naviga
 | Publish Images    | `.github/workflows/publish-images.yml`    | Build, scan, label, and publish commit-SHA-tagged GHCR images after required gates pass |
 | Deploy Production | `.github/workflows/deploy-production.yml` | Deploy a selected image to the VPS over SSH and verify production health                |
 
-```text
-Push to main
-    ├─ CI ───────────────┐
-    └─ Security ─────────┼─> Publish GHCR image ─> Deploy production ─> Smoke test
-                        └─ release blocked if a required gate fails
+```mermaid
+flowchart LR
+    push[Push to main] --> gates{CI + Security}
+    gates -->|Pass| publish[Publish GHCR image]
+    publish --> deploy[Deploy production]
+    deploy --> smoke[Production smoke test]
+    gates -->|Fail| blocked[Release blocked]
 ```
+
+Any required gate failure blocks the release.
 
 ## Production Engineering
 
