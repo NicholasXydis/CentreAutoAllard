@@ -151,14 +151,9 @@ The automated suite covers localization, SEO metadata, analytics loading, naviga
 | Publish Images    | `.github/workflows/publish-images.yml`    | Build, scan, label, and publish commit-SHA-tagged GHCR images after required gates pass |
 | Deploy Production | `.github/workflows/deploy-production.yml` | Deploy a selected image to the VPS over SSH and verify production health                |
 
-```mermaid
-flowchart LR
-    push[Push to main] --> gates{CI + Security}
-    gates -->|Pass| publish[Publish GHCR image]
-    publish --> deploy[Deploy production]
-    deploy --> smoke[Production smoke test]
-    gates -->|Fail| blocked[Release blocked]
-```
+<div align="center">
+  <img src="docs/ci-cd-flow.svg" alt="CI and security checks gate image publishing, production deployment, and smoke testing" width="100%">
+</div>
 
 Any required gate failure blocks the release.
 
