@@ -2,7 +2,7 @@
 
 # Centre D'Auto Allard
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=3B82F6&center=true&vCenter=true&width=760&lines=Bilingual+Automotive+Business+Website;Next.js+%7C+TypeScript+%7C+Tailwind+CSS;Docker+%7C+Nginx+%7C+Cloudflare+%7C+Linux+VPS;51+Automated+Checks+%7C+Production+Deployed)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=3B82F6&center=true&vCenter=true&width=760&lines=Bilingual+Automotive+Business+Website;Next.js+%7C+TypeScript+%7C+React;Docker+%7C+Nginx+%7C+Cloudflare+%7C+Linux+VPS;51+Automated+Checks+%7C+Production+Deployed)](https://git.io/typing-svg)
 
 A fast, accessible, bilingual website for a family-owned Montreal automotive service centre.
 
@@ -25,16 +25,14 @@ A fast, accessible, bilingual website for a family-owned Montreal automotive ser
   &nbsp;&nbsp;
   <img src="https://cdn.jsdelivr.net/gh/xandemon/developer-icons@main/icons/cloudflare.svg" alt="Cloudflare" width="52" height="52">
   &nbsp;&nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" alt="GitHub Actions" width="52" height="52">
-  &nbsp;&nbsp;
   <img src="https://cdn.jsdelivr.net/gh/xandemon/developer-icons@main/icons/linux.svg" alt="Linux VPS" width="52" height="52">
 </p>
 
 <p align="center">
   <strong>French + English</strong> &nbsp;|&nbsp;
   <strong>51 automated checks</strong> &nbsp;|&nbsp;
-  <strong>100% tested-logic coverage</strong> &nbsp;|&nbsp;
-  <strong>CodeQL + Trivy</strong>
+  <strong>CodeQL + Trivy security scans</strong> &nbsp;|&nbsp;
+  <strong>Linux VPS deployed</strong>
 </p>
 
 <a href="https://centredautoallard.ca">
