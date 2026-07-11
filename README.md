@@ -30,7 +30,7 @@ A fast, accessible, bilingual website for a family-owned Montreal automotive ser
 
 <p align="center">
   <strong>French + English</strong> &nbsp;|&nbsp;
-  <strong>51 automated checks</strong> &nbsp;|&nbsp;
+  <strong>70 automated checks</strong> &nbsp;|&nbsp;
   <strong>CodeQL + Trivy security scans</strong> &nbsp;|&nbsp;
   <strong>Linux VPS deployed</strong>
 </p>
