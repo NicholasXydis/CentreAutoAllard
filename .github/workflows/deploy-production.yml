@@ -94,3 +94,6 @@ jobs:
           set -euo pipefail
           curl --fail --silent --show-error --location https://centredautoallard.ca/health | grep -F 'ok'
           curl --fail --silent --show-error --location https://centredautoallard.ca/fr/ | grep -F "Centre D'Auto Allard"
+          not_found_status="$(curl --silent --show-error --location --output /tmp/not-found.html --write-out '%{http_code}' https://centredautoallard.ca/missing-route/)"
+          test "${not_found_status}" = "404"
+          grep -F 'Aller au contenu' /tmp/not-found.html

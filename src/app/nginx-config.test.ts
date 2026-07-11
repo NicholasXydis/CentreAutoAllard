@@ -14,3 +14,9 @@ describe('nginx redirects', () => {
     expect(nginxConfig.match(/\breturn\s+30[1278]\b/g)).toHaveLength(1);
   });
 });
+
+describe('nginx error pages', () => {
+  it('serves the exported bilingual 404 page instead of the nginx default', () => {
+    expect(nginxConfig).toContain('error_page 404 /404.html;');
+  });
+});
