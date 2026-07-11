@@ -2,7 +2,7 @@
 
 # Centre D'Auto Allard
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=3B82F6&center=true&vCenter=true&width=760&lines=Bilingual+Automotive+Business+Website;Next.js+%7C+TypeScript+%7C+React;Docker+%7C+Nginx+%7C+Cloudflare+%7C+Linux+VPS;51+Automated+Checks+%7C+Production+Deployed)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=3B82F6&center=true&vCenter=true&width=760&lines=Bilingual+Automotive+Business+Website;Next.js+%7C+TypeScript+%7C+React;Docker+%7C+Nginx+%7C+Cloudflare+%7C+Linux+VPS;70+Automated+Checks+%7C+Production+Deployed)](https://git.io/typing-svg)
 
 A fast, accessible, bilingual website for a family-owned Montreal automotive service centre.
 
@@ -58,7 +58,7 @@ The site is statically generated with Next.js and deployed as a hardened Nginx c
 ## Quality Highlights
 
 - Mobile-first responsive design with dedicated desktop scaling.
-- Semantic HTML and keyboard-accessible interactions.
+- Semantic HTML and keyboard-accessible interactions, verified by automated accessibility scans on every route.
 - Reduced-motion behavior for users who request it.
 - Optimized static delivery with long-lived immutable asset caching.
 - Localized search metadata across all public routes.
@@ -72,10 +72,10 @@ The site is statically generated with Next.js and deployed as a hardened Nginx c
 - **Business conversion:** prominent phone, contact, service, and Google Maps actions.
 - **Search visibility:** localized metadata, canonical URLs, `hreflang`, sitemap, robots directives, and `AutoRepair` JSON-LD.
 - **Social sharing:** dedicated 1200×630 Open Graph image for Facebook, LinkedIn, Discord, and X.
-- **Accessibility:** semantic structure, keyboard navigation, skip links, visible focus states, localized labels, and reduced-motion support.
+- **Accessibility:** semantic landmarks, keyboard navigation, working skip links, visible focus states, localized labels, and reduced-motion support, enforced by automated `axe-core` scans in CI.
 - **Motion design:** polished page transitions and interactions using Framer Motion.
 - **Analytics:** Google Analytics page-view tracking built into the static production bundle.
-- **Resilience:** localized 404 and error recovery experiences with production health checks.
+- **Resilience:** branded bilingual 404 served directly by Nginx, localized error recovery, and production health checks.
 - **Security headers:** CSP, HSTS, frame protection, MIME sniffing protection, and restrictive permissions policy.
 
 ## Architecture
@@ -91,11 +91,11 @@ CentreAutoAllard/
 ├─ messages/                     French and English translations
 ├─ public/                       Storefront and social-sharing assets
 ├─ docs/                         Demo media, quality evidence, and README assets
-├─ e2e/                          Playwright production-route tests
+├─ e2e/                          Playwright route and accessibility (axe) tests
 ├─ .github/workflows/            CI, security, image publishing, production deployment
 ├─ dockerfile                    Multi-stage Next.js export and Nginx image
 ├─ docker-compose.yml            Production container definition
-├─ nginx.conf                    Static routing, caching, health checks, security headers
+├─ nginx.conf                    Static routing, caching, error pages, health checks, security headers
 └─ next.config.ts                Static export and localization configuration
 ```
 
@@ -125,30 +125,34 @@ CentreAutoAllard/
 
 ## Tech Stack
 
-| Area       | Stack                                               |
-| ---------- | --------------------------------------------------- |
-| Frontend   | TypeScript, React 19, Next.js 16                    |
-| Styling    | Tailwind CSS, Framer Motion, Lucide React           |
+| Area       | Stack                                                |
+| ---------- | ---------------------------------------------------- |
+| Frontend   | TypeScript, React 19, Next.js 16                     |
+| Styling    | Tailwind CSS, Framer Motion, Lucide React            |
 | DevOps     | Docker, GitHub Actions, Nginx, Cloudflare, Linux VPS |
-| Testing    | Vitest, Playwright                                  |
-| Monitoring | UptimeRobot, Google Analytics                       |
+| Testing    | Vitest, Playwright                                   |
+| Monitoring | UptimeRobot, Google Analytics                        |
 
 ## Testing
 
 | Suite                    |  Count | Coverage                                      |
 | ------------------------ | -----: | --------------------------------------------- |
-| Unit and component tests |     36 | 100% across the configured tested-logic scope |
-| End-to-end checks        |     34 | Desktop and mobile Chromium                   |
+| Unit and component tests |     34 | 100% across the configured tested-logic scope |
+| End-to-end checks        |     36 | Desktop and mobile Chromium                   |
 | **Total**                | **70** | CI-enforced                                   |
+
+End-to-end coverage includes automated accessibility scans. Every public route, plus the 404 page, is analysed with `axe-core` against WCAG 2.1 A/AA on desktop and mobile, and the suite asserts that the navigation stays outside the `main` landmark so the skip link resolves to real content. Accessibility regressions fail the build instead of shipping.
 
 ## CI/CD
 
-| Workflow          | File                                      | Purpose                                                   |
-| ----------------- | ----------------------------------------- | --------------------------------------------------------- |
-| CI                | `.github/workflows/ci.yml`                | Typecheck, lint, coverage, static build, Playwright E2E   |
-| Security          | `.github/workflows/security.yml`          | CodeQL and Trivy filesystem/image scans                   |
-| Publish Images    | `.github/workflows/publish-images.yml`    | Build, scan, and push GHCR image                          |
-| Deploy Production | `.github/workflows/deploy-production.yml` | SSH deploy to Linux VPS and production smoke tests        |
+| Workflow          | File                                      | Purpose                                                  |
+| ----------------- | ----------------------------------------- | -------------------------------------------------------- |
+| CI                | `.github/workflows/ci.yml`                | Format, typecheck, lint, coverage, build, Playwright E2E |
+| Security          | `.github/workflows/security.yml`          | CodeQL (TypeScript + Actions) and Trivy scans            |
+| Publish Images    | `.github/workflows/publish-images.yml`    | Build, scan, and push GHCR image                         |
+| Deploy Production | `.github/workflows/deploy-production.yml` | SSH deploy to Linux VPS and production smoke tests       |
+
+Every workflow declares a least-privilege `permissions` block, and every third-party action is pinned to a full commit SHA so a hijacked tag cannot inject code into the pipeline. CodeQL analyses the TypeScript source and the workflow definitions themselves, catching script injection in Actions.
 
 <div align="center">
   <img src="docs/ci-cd-flow.svg" alt="CI and security checks gate image publishing, production deployment, and smoke testing" width="100%">
@@ -162,7 +166,7 @@ Any required gate failure blocks the release.
 - The Nginx container runs as a non-root user with a read-only filesystem.
 - Production images are pinned and published by commit SHA for traceable deployments.
 - Deployment records capture the deployed SHA, image tag, and UTC release timestamp.
-- Public health and route smoke tests run after every production deployment.
+- Public health, route, and 404 smoke tests run after every production deployment.
 - UptimeRobot checks production availability every five minutes.
 
 ## Quality Gates
