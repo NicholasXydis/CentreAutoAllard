@@ -137,9 +137,9 @@ CentreAutoAllard/
 
 | Suite                    |  Count | Coverage                                      |
 | ------------------------ | -----: | --------------------------------------------- |
-| Unit and component tests |     33 | 100% across the configured tested-logic scope |
-| End-to-end checks        |     18 | Desktop and mobile Chromium                   |
-| **Total**                | **51** | CI-enforced                                   |
+| Unit and component tests |     36 | 100% across the configured tested-logic scope |
+| End-to-end checks        |     34 | Desktop and mobile Chromium                   |
+| **Total**                | **70** | CI-enforced                                   |
 
 ## CI/CD
 
