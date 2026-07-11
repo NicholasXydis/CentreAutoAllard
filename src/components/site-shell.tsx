@@ -1,12 +1,11 @@
 import Image from 'next/image';
 
-export function SiteShell({children}: Readonly<{children: React.ReactNode}>) {
+export function SiteShell({
+  nav,
+  children
+}: Readonly<{nav?: React.ReactNode; children: React.ReactNode}>) {
   return (
-    <main
-      id="main-content"
-      tabIndex={-1}
-      className="relative min-h-dvh overflow-x-hidden bg-[#050912] text-white"
-    >
+    <div className="relative min-h-dvh overflow-x-hidden bg-[#050912] text-white">
       <div className="fixed inset-0 overflow-hidden" aria-hidden="true">
         <Image
           src="/shop-front.webp"
@@ -33,7 +32,12 @@ export function SiteShell({children}: Readonly<{children: React.ReactNode}>) {
         className="fixed inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.42),transparent_20%,transparent_80%,rgba(0,0,0,0.42))]"
         aria-hidden="true"
       />
-      <div className="relative z-10 min-h-dvh">{children}</div>
-    </main>
+      <div className="relative z-10 min-h-dvh">
+        {nav}
+        <main id="main-content" tabIndex={-1}>
+          {children}
+        </main>
+      </div>
+    </div>
   );
 }

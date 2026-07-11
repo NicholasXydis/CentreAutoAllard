@@ -9,8 +9,7 @@ export default async function HomePage({params}: Readonly<{params: Promise<Local
   setRequestLocale(locale);
 
   return (
-    <SiteShell>
-      <Navbar />
+    <SiteShell nav={<Navbar />}>
       <Hero />
     </SiteShell>
   );

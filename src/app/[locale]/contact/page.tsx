@@ -36,8 +36,7 @@ export default async function ContactPage({params}: Readonly<{params: Promise<Lo
   const nav = await getTranslations('nav');
 
   return (
-    <SiteShell>
-      <Navbar />
+    <SiteShell nav={<Navbar />}>
       <section className="wide-page flex min-h-dvh items-start px-4 pb-10 pt-[clamp(12rem,31dvh,19rem)] sm:px-6 sm:pb-12 sm:pt-32 [@media_(min-width:768px)_and_(max-width:1023px)_and_(orientation:portrait)]:pt-[clamp(17rem,28dvh,21rem)] [@media_(min-width:820px)_and_(min-height:1100px)_and_(orientation:portrait)]:pt-[30dvh]">
         <div className="wide-standard-container mx-auto w-full max-w-[390px] sm:max-w-[560px] lg:max-w-none">
           <MotionPageCard>
@@ -88,7 +87,7 @@ export default async function ContactPage({params}: Readonly<{params: Promise<Lo
                 <Button
                   asChild
                   size="lg"
-                  className="wide-action h-[52px] rounded-[12px] px-3 text-[13px] text-white shadow-[0_0_30px_rgba(37,99,235,0.5)] hover:bg-blue-500 sm:text-[14px]"
+                  className="wide-action h-[52px] rounded-[12px] bg-blue-600 px-3 text-[13px] text-white shadow-[0_0_30px_rgba(37,99,235,0.5)] hover:bg-blue-500 sm:text-[14px]"
                 >
                   <a href={`tel:${site.phone}`}>
                     <Phone className="h-5 w-5" aria-hidden="true" />

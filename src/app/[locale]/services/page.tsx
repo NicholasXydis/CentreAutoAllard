@@ -42,8 +42,7 @@ export default async function ServicesPage({params}: Readonly<{params: Promise<L
   const nav = await getTranslations('nav');
 
   return (
-    <SiteShell>
-      <Navbar />
+    <SiteShell nav={<Navbar />}>
       <section className="wide-page min-h-dvh px-4 pb-10 pt-[clamp(12rem,31dvh,19rem)] sm:px-6 sm:pb-16 sm:pt-32 [@media_(min-width:768px)_and_(max-width:1023px)_and_(orientation:portrait)]:pt-[clamp(17rem,28dvh,21rem)] [@media_(min-width:820px)_and_(min-height:1100px)_and_(orientation:portrait)]:pt-[30dvh]">
         <div className="wide-services-container mx-auto w-full max-w-[390px] sm:max-w-[640px] md:max-w-[960px] lg:max-w-none">
           <MotionPageCard>
