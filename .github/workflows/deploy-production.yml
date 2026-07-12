@@ -72,8 +72,8 @@ jobs:
           set -euo pipefail
           cd "${VPS_APP_PATH}"
           test -f .env
-          cp .env ".env.before-deploy-${DEPLOY_SHA:0:12}"
-          chmod 600 ".env.before-deploy-${DEPLOY_SHA:0:12}"
+          cp .env .env.previous
+          chmod 600 .env.previous
           sed -i "s#^CENTRE_AUTO_ALLARD_IMAGE=.*#CENTRE_AUTO_ALLARD_IMAGE=ghcr.io/nicholasxydis/centre-auto-allard:${DEPLOY_SHA}#" .env
           chmod 600 .env
           docker compose pull
