@@ -43,6 +43,9 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: Audit dependencies
+        run: npm run audit:dependencies
+
       - name: Test with coverage
         run: npm run test:coverage
 
