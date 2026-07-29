@@ -2,7 +2,7 @@
 
 # Centre D'Auto Allard
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=3B82F6&center=true&vCenter=true&width=760&lines=Bilingual+Automotive+Business+Website;Next.js+%7C+TypeScript+%7C+React;Docker+%7C+Nginx+%7C+Cloudflare+%7C+Linux+VPS;70+Automated+Checks+%7C+Production+Deployed)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=3B82F6&center=true&vCenter=true&width=760&lines=Bilingual+Automotive+Business+Website;Next.js+%7C+TypeScript+%7C+React;Docker+%7C+Nginx+%7C+Cloudflare+%7C+Linux+VPS;67+Automated+Checks+%7C+Production+Deployed)](https://git.io/typing-svg)
 
 A fast, accessible, bilingual website for a family-owned Montreal automotive service centre.
 
@@ -30,7 +30,7 @@ A fast, accessible, bilingual website for a family-owned Montreal automotive ser
 
 <p align="center">
   <strong>French + English</strong> &nbsp;|&nbsp;
-  <strong>70 automated checks</strong> &nbsp;|&nbsp;
+  <strong>67 automated checks</strong> &nbsp;|&nbsp;
   <strong>CodeQL + Trivy security scans</strong> &nbsp;|&nbsp;
   <strong>Linux VPS deployed</strong>
 </p>
@@ -63,7 +63,7 @@ The site is statically generated with Next.js and deployed as a hardened Nginx c
 - Optimized static delivery with long-lived immutable asset caching.
 - Localized search metadata across all public routes.
 - Dedicated social preview imagery using the recommended Open Graph aspect ratio.
-- Production monitoring through container health checks, smoke tests, and Google Analytics.
+- Production monitoring through container health checks, smoke tests, and cookieless Cloudflare Web Analytics.
 
 ## Features
 
@@ -74,7 +74,7 @@ The site is statically generated with Next.js and deployed as a hardened Nginx c
 - **Social sharing:** dedicated 1200×630 Open Graph image for Facebook, LinkedIn, Discord, and X.
 - **Accessibility:** semantic landmarks, keyboard navigation, working skip links, visible focus states, localized labels, and reduced-motion support, enforced by automated `axe-core` scans in CI.
 - **Motion design:** polished page transitions and interactions using Framer Motion.
-- **Analytics:** Google Analytics page-view tracking built into the static production bundle.
+- **Cookieless analytics:** Cloudflare Web Analytics measures traffic at the edge, so the site sets no cookies and needs no consent banner.
 - **Resilience:** branded bilingual 404 served directly by Nginx, localized error recovery, and production health checks.
 - **Security headers:** CSP, HSTS, frame protection, MIME sniffing protection, and restrictive permissions policy.
 
@@ -103,7 +103,7 @@ CentreAutoAllard/
 <pre>
 ┌─────────────────────────────────────────────────────────┐
 │                    Customer Browser                     │
-│   Responsive FR/EN UI, SEO metadata, Google Analytics   │
+│         Responsive FR/EN UI, SEO metadata               │
 └────────────────────────────┬────────────────────────────┘
                              │ HTTPS
 ┌────────────────────────────▼────────────────────────────┐
@@ -131,15 +131,15 @@ CentreAutoAllard/
 | Styling    | Tailwind CSS, Framer Motion, Lucide React            |
 | DevOps     | Docker, GitHub Actions, Nginx, Cloudflare, Linux VPS |
 | Testing    | Vitest, Playwright                                   |
-| Monitoring | UptimeRobot, Google Analytics                        |
+| Monitoring | UptimeRobot, Cloudflare Web Analytics                |
 
 ## Testing
 
 | Suite                    |  Count | Coverage                                      |
 | ------------------------ | -----: | --------------------------------------------- |
-| Unit and component tests |     34 | 100% across the configured tested-logic scope |
+| Unit and component tests |     31 | 100% across the configured tested-logic scope |
 | End-to-end checks        |     36 | Desktop and mobile Chromium                   |
-| **Total**                | **70** | CI-enforced                                   |
+| **Total**                | **67** | CI-enforced                                   |
 
 End-to-end coverage includes automated accessibility scans. Every public route, plus the 404 page, is analysed with `axe-core` against WCAG 2.1 A/AA on desktop and mobile, and the suite asserts that the navigation stays outside the `main` landmark so the skip link resolves to real content. Accessibility regressions fail the build instead of shipping.
 
