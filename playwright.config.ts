@@ -26,9 +26,6 @@ export default defineConfig({
     command: 'npm run build && node e2e/static-server.mjs',
     url: 'http://127.0.0.1:3100/fr/',
     reuseExistingServer: false,
-    timeout: 180_000,
-    env: {
-      NEXT_PUBLIC_GA_MEASUREMENT_ID: 'G-PLAYWRIGHT'
-    }
+    timeout: 180_000
   }
 });

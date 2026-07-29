@@ -17,12 +17,7 @@ const localizedPages = [
 
 for (const pageData of localizedPages) {
   test.describe(`${pageData.locale} routes`, () => {
-    test('home exposes primary actions, metadata, and analytics', async ({page}) => {
-      const analyticsRequest = page.waitForRequest(
-        (request) =>
-          request.url().includes('googletagmanager.com/gtag/js') &&
-          request.url().includes('G-PLAYWRIGHT')
-      );
+    test('home exposes primary actions and metadata', async ({page}) => {
       await page.goto(`/${pageData.locale}/`);
 
       await expect(page.locator('html')).toHaveAttribute(
@@ -42,7 +37,6 @@ for (const pageData of localizedPages) {
         'href',
         'tel:+15147684455'
       );
-      await analyticsRequest;
     });
 
     test('services lists each category and navigates to contact', async ({page}) => {

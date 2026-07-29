@@ -4,7 +4,6 @@ import {Inter} from 'next/font/google';
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages, getTranslations, setRequestLocale} from 'next-intl/server';
 import {notFound} from 'next/navigation';
-import {GoogleAnalytics} from '@/components/google-analytics';
 import {site} from '@/config/site';
 import {isLocale, locales, type Locale} from '@/i18n/routing';
 import {createLocalizedMetadata, getHtmlLang} from '@/lib/seo';
@@ -96,7 +95,6 @@ export default async function LocaleLayout({
             __html: JSON.stringify(businessSchema).replace(/</g, '\\u003c')
           }}
         />
-        <GoogleAnalytics />
       </body>
     </html>
   );

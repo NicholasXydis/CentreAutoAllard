@@ -15,7 +15,6 @@ export default defineConfig({
         'src/app/(root)/page.tsx',
         'src/app/[locale]/error.tsx',
         'src/app/[locale]/not-found.tsx',
-        'src/components/google-analytics.tsx',
         'src/components/hero.tsx',
         'src/components/lang-toggle.tsx',
         'src/components/motion-primitives.tsx',
