@@ -12,15 +12,14 @@ on:
 permissions:
   actions: read
   contents: read
-  packages: write
 
 concurrency:
   group: publish-images-${{ github.event.workflow_run.head_sha }}
   cancel-in-progress: false
 
 jobs:
-  publish:
-    name: Publish GHCR Image
+  build:
+    name: Build and Scan GHCR Image
     if: >-
       github.event.workflow_run.conclusion == 'success' &&
       github.event.workflow_run.event == 'push' &&
@@ -85,6 +84,37 @@ jobs:
           severity: HIGH,CRITICAL
           ignore-unfixed: true
           exit-code: '1'
+
+      - name: Export image
+        run: docker save "${IMAGE}" | gzip > image.tar.gz
+
+      - name: Upload image
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: container-image-${{ github.event.workflow_run.head_sha }}
+          path: image.tar.gz
+          if-no-files-found: error
+          retention-days: 1
+
+  publish:
+    name: Publish GHCR Image
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      actions: read
+      contents: read
+      packages: write
+    env:
+      IMAGE: ghcr.io/nicholasxydis/centre-auto-allard:${{ github.event.workflow_run.head_sha }}
+    steps:
+      - name: Download image
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+        with:
+          name: container-image-${{ github.event.workflow_run.head_sha }}
+
+      - name: Load image
+        run: gunzip --stdout image.tar.gz | docker load
 
       - name: Log in to GHCR
         env:
