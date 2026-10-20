@@ -58,7 +58,7 @@ export function LangToggle({className}: Readonly<{className?: string}>) {
     <motion.button
       onClick={handleSwitch}
       disabled={isPending}
-      aria-label={t(nextLocale)}
+      aria-label={`${label}, ${t(nextLocale)}`}
       whileHover={shouldReduceMotion ? undefined : pressableHover}
       whileTap={shouldReduceMotion ? undefined : pressableTap}
       transition={pressTransition}

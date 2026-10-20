@@ -138,14 +138,14 @@ describe('shared components', () => {
 
     expect(screen.getAllByRole('link')).toHaveLength(4);
     expect(screen.queryByRole('link', {current: 'page'})).not.toBeInTheDocument();
-    expect(screen.getByRole('button', {name: 'Switch to English'})).toBeEnabled();
+    expect(screen.getByRole('button', {name: 'EN, Switch to English'})).toBeEnabled();
   });
 
   it('switches French routes to the matching English route', () => {
     pathname = '/fr/contact';
     render(<LangToggle className="custom-class" />);
 
-    const toggle = screen.getByRole('button', {name: 'Switch to English'});
+    const toggle = screen.getByRole('button', {name: 'EN, Switch to English'});
     expect(toggle).toHaveClass('custom-class');
     expect(toggle).toHaveTextContent('EN');
     fireEvent.click(toggle);
@@ -157,7 +157,7 @@ describe('shared components', () => {
     pathname = '/en/services';
     render(<LangToggle />);
 
-    const toggle = screen.getByRole('button', {name: 'Switch to French'});
+    const toggle = screen.getByRole('button', {name: 'FR, Switch to French'});
     expect(toggle).toHaveTextContent('FR');
     fireEvent.click(toggle);
     expect(push).toHaveBeenCalledWith('/fr/services');

@@ -3,8 +3,7 @@ updates:
   - package-ecosystem: npm
     directory: /
     schedule:
-      interval: weekly
-      day: monday
+      interval: monthly
       time: '09:00'
       timezone: America/Toronto
     open-pull-requests-limit: 5
@@ -16,6 +15,10 @@ updates:
         update-types:
           - minor
           - patch
+      security-updates:
+        applies-to: security-updates
+        patterns:
+          - '*'
     ignore:
       - dependency-name: '*'
         update-types:
@@ -27,8 +30,7 @@ updates:
   - package-ecosystem: github-actions
     directory: /
     schedule:
-      interval: weekly
-      day: monday
+      interval: monthly
       time: '09:00'
       timezone: America/Toronto
     open-pull-requests-limit: 5
@@ -49,8 +51,7 @@ updates:
     directories:
       - /
     schedule:
-      interval: weekly
-      day: monday
+      interval: monthly
       time: '09:00'
       timezone: America/Toronto
     open-pull-requests-limit: 5
@@ -70,8 +71,7 @@ updates:
   - package-ecosystem: docker-compose
     directory: /
     schedule:
-      interval: weekly
-      day: monday
+      interval: monthly
       time: '09:00'
       timezone: America/Toronto
     open-pull-requests-limit: 5

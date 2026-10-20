@@ -43,7 +43,7 @@ jobs:
       - name: Lint
         run: npm run lint
 
-      - name: Audit dependencies
+      - name: Audit production dependencies
         run: npm run audit:dependencies
 
       - name: Test with coverage
